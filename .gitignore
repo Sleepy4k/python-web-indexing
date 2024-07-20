@@ -1,0 +1,35 @@
+# Ignore python cache files
+/__pycache__/*
+/**/__pycache__/*
+
+# Ignore python environment
+/venv/*
+/.venv/*
+/.env/*
+
+# Ignore python logs
+/*.log
+/*.log.*
+/*.log-*
+
+# Ignore text editor files
+/.idea/*
+/.vscode/*
+/.sublime-project
+
+# Ignore python compiled files
+/*.pyc
+/*.pyo
+/*.pyd
+
+# Ignore python test files
+/test/*
+/tests/*
+!test/.gitkeep
+!tests/.gitkeep
+
+# Ignore data files
+*.txt
+*.csv
+*.json
+*.xml
