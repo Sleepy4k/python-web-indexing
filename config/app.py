@@ -1,13 +1,14 @@
 APPConfig = {
-  'name': 'app',
+  'name': 'Python Web Data Scraper',
   'version': '1.0.0',
   'author': 'Apri Pandu Wicaksono',
-  'description': 'Simple web scraping to get urls from search engine',
+  'github': 'github.com/sleepy4k',
+  'description': 'Simple data scraper to get urls from search engine',
 }
 
 DEBUGConfig = {
   'debug': True,
-  'verbose': True,
+  'verbose': False,
 }
 
 FILEPATHConfig = {

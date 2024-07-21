@@ -1,4 +1,8 @@
 URLConfig = {
+  'must_start_with': {
+    'enable': False,
+    'protocol': 'https://',
+  },
   'must_contain': {
     'domain': False,
     'https': True, # Bare minimum is https protocol, prevent any invalid url such javascript or data
