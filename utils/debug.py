@@ -7,7 +7,7 @@ def log(message):
     return
 
   now = datetime.datetime.now()
-  data = f"[DEBUG] [{now.strftime("%Y-%m-%d %H:%M:%S")}] {message}"
+  data = f"[DEBUG] [{now.strftime('%Y-%m-%d %H:%M:%S')}] {message}"
 
   if DEBUGConfig['verbose']:
     data += (
@@ -18,6 +18,6 @@ def log(message):
       f"\tFile: {inspect.stack()[1][1]}\n"
     )
 
-  file = open(f"{FILEPATHConfig['log_path']}/log-{now.strftime("%Y%m%d")}.txt", 'a')
+  file = open(f"{FILEPATHConfig['log_path']}/log-{now.strftime('%Y%m%d')}.txt", 'a')
   file.write(data + "\n")
   file.close()
