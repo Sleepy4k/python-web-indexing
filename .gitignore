@@ -33,3 +33,4 @@
 *.csv
 *.json
 *.xml
+!requirements.txt
