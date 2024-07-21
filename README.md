@@ -9,10 +9,14 @@ this script will automate your searching by listing all domain inside urls file
 Dependencies
 
 ```bash
-- random
-- datetime
 - requests
-- BeautifulSoup
+- beautifulsoup4
+```
+
+Install Dependencies
+
+```bash
+pip install -r ./requirements.txt
 ```
 
 Run program
@@ -20,6 +24,12 @@ Run program
 ```bash
 python main.py
 ```
+
+## Update
+
+Maybe some of you asking "how to search data from all website?",
+For now, you can search data only providing keyword with out giving spesific domain.
+On domain input, you can provide '*' as wildcard, script will read it ass all website
 
 ## Notes
 

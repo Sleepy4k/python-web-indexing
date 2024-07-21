@@ -10,7 +10,7 @@ URLConfig = {
   },
   'search_engine_url': [
     'https://www.bing.com/search?q=',
-    'https://www.google.com/search?q='
+    'https://www.google.com/search?q=',
   ],
   'blocked_text': [
     'Please enable cookies.',
