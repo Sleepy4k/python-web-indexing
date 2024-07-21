@@ -17,6 +17,11 @@ def check_duplicate_urls(urls):
   return new_urls
 
 def is_url_valid(domain, url):
+  if URLConfig['must_start_with']['enable']:
+    if not url.startswith(URLConfig['must_start_with']['protocol']):
+      debug.log(f"URL {url} is not valid, must start with {URLConfig['must_start_with']['protocol']}")
+      return False
+
   if ("http" not in url or "https" not in url) and URLConfig['must_contain']['https']:
     debug.log(f"URL {url} is not valid, must contains of https")
     return False
