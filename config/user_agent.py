@@ -11,12 +11,14 @@ USERAGENT = [
   "Mozilla/5.0 (Linux; Android 11; Pixel 4a Build/RQ1A.201205.008; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/87.0.4280.141 Mobile Safari/537.36 [FB_IAB/FB4A;FBAV/301.0.0.37.477;]",
 ]
 
-def get_user_agent():
-  if not FILEPATHConfig['user_agent']:
+def get_user_agent(path=None):
+  path = path or FILEPATHConfig['user_agent']
+
+  if not path:
     return USERAGENT
 
   try:
-    file = open(FILEPATHConfig['user_agent'], 'r')
+    file = open(path, 'r')
   except FileNotFoundError:
     return USERAGENT
 
