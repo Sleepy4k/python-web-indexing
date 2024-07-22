@@ -1,5 +1,3 @@
-from config.app import FILEPATHConfig
-
 USERAGENT = [
   "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3",
   "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.81 Safari/537.36",
@@ -10,23 +8,3 @@ USERAGENT = [
   "Mozilla/5.0 (Linux; Android 11; SM-G980F Build/RP1A.200720.012; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/92.0.4515.166 Mobile Safari/537.36",
   "Mozilla/5.0 (Linux; Android 11; Pixel 4a Build/RQ1A.201205.008; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/87.0.4280.141 Mobile Safari/537.36 [FB_IAB/FB4A;FBAV/301.0.0.37.477;]",
 ]
-
-def get_user_agent(path=None):
-  path = path or FILEPATHConfig['user_agent']
-
-  if not path:
-    return USERAGENT
-
-  try:
-    file = open(path, 'r')
-  except FileNotFoundError:
-    return USERAGENT
-
-  user_agent = file.readlines()
-
-  if not user_agent or len(user_agent) == 0:
-    return USERAGENT
-
-  file.close()
-
-  return USERAGENT + user_agent

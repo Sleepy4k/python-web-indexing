@@ -14,8 +14,12 @@ URLConfig = {
   ],
   'blocked_text': [
     'Please enable cookies.',
-    'Our systems have detected unusual traffic from your computer network',
+    'Please click the checkbox',
+    'Please verify you are a human',
+    'Please prove that you are human',
     'Please enable JavaScript in your browser',
-    'Please enable JavaScript to view the page content.'
+    'Please turn JavaScript on and reload the page',
+    'Please enable JavaScript to view the page content.',
+    'Our systems have detected unusual traffic from your computer network',
   ]
 }
