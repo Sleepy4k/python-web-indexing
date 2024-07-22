@@ -22,12 +22,6 @@
 /*.pyo
 /*.pyd
 
-# Ignore python test files
-/test/*
-/tests/*
-!test/.gitkeep
-!tests/.gitkeep
-
 # Ignore data files
 *.txt
 *.csv
