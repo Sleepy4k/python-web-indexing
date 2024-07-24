@@ -1,0 +1,9 @@
+Mozilla/5.0 (compatible; MSIE 11.0; Windows; U; Windows NT 6.3; Trident/7.0)
+Mozilla/5.0 (Windows; U; Windows NT 6.2;; en-US) Gecko/20100101 Firefox/62.9
+Mozilla/5.0 (compatible; MSIE 7.0; Windows; Windows NT 10.3; WOW64 Trident/4.0)
+Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/600.34 (KHTML, like Gecko) Chrome/48.0.2305.315 Safari/603
+Mozilla/5.0 (Windows; U; Windows NT 6.0;) AppleWebKit/603.6 (KHTML, like Gecko) Chrome/52.0.3221.159 Safari/600
+Mozilla/5.0 (Windows NT 10.0; WOW64; en-US) AppleWebKit/601.8 (KHTML, like Gecko) Chrome/53.0.3890.206 Safari/536
+Mozilla/5.0 (Windows NT 6.1; WOW64; en-US) AppleWebKit/535.32 (KHTML, like Gecko) Chrome/50.0.3577.267 Safari/601
+Mozilla/5.0 (Windows; U; Windows NT 6.2; WOW64; en-US) AppleWebKit/535.41 (KHTML, like Gecko) Chrome/52.0.3857.122 Safari/533
+Mozilla/5.0 (Windows; Windows NT 10.4; x64) AppleWebKit/533.1 (KHTML, like Gecko) Chrome/51.0.1942.244 Safari/536.8 Edge/11.89897
