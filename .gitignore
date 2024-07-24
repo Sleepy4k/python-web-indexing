@@ -27,4 +27,5 @@
 *.csv
 *.json
 *.xml
+!user_agent.txt
 !requirements.txt
