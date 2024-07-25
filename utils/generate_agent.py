@@ -5,11 +5,12 @@ from config.user_agent import USERAGENT
 
 used_user_agent = []
 
-def get_user_agent(path=None):
-  path = path or FILEPATHConfig['user_agent']
-
-  if not path:
+def get_user_agent(path=None, test=False):
+  if test and not path:
     return USERAGENT
+
+  if not test and not path:
+    path = FILEPATHConfig['user_agent']
 
   try:
     file = open(path, 'r')
