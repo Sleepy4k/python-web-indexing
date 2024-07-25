@@ -1,10 +1,15 @@
 import unittest
+from config.app import DEBUGConfig
 from tests.utils.generate_agent_test import TestGenerateAgent
 from tests.handlers.file_test import TestGenerateFileName, TestWriteToFile
 from tests.utils.check_url_test import TestCheckDuplicateURL, TestIsURLValid
 from tests.handlers.get_url_test import TestGenerateQuery, TestBypassSafeSearch
 
 def main():
+  # Disable debug and verbose mode
+  DEBUGConfig['debug'] = False
+  DEBUGConfig['verbose'] = False
+
   loader = unittest.TestLoader()
   test_case = [
     # Load Check URL Test
