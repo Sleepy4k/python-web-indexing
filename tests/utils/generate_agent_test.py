@@ -16,16 +16,16 @@ class TestGenerateAgent(unittest.TestCase):
 
   def test_user_agent_merge_from_txt_file(self):
     path = 'tests/user_agent.txt'
-    merged_list_agent = get_user_agent(path)
-    list_agent = get_user_agent()
+    merged_list_agent = get_user_agent(path, True)
+    list_agent = get_user_agent(None, True)
 
     self.assertNotEqual(merged_list_agent, list_agent)
     self.assertEqual(len(merged_list_agent), len(list_agent) + 1)
 
   def test_user_agent_merge_from_txt_file_empty(self):
     path = 'tests/user_agent_empty.txt'
-    merged_list_agent = get_user_agent(path)
-    list_agent = get_user_agent()
+    merged_list_agent = get_user_agent(path, True)
+    list_agent = get_user_agent(None, True)
 
     self.assertEqual(merged_list_agent, list_agent)
 
