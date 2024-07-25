@@ -29,6 +29,10 @@ def get_data_from_search_engine(domain, keyword):
   urls = []
   blocked = False
 
+  if len(search_engine) == 0:
+    debug.log("No search engine available")
+    return urls
+
   for search_engine in URLConfig['search_engine_url']:
     blocked = False
 
