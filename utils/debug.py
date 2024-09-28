@@ -2,7 +2,11 @@ import inspect
 import datetime
 from config.app import DEBUGConfig, FILEPATHConfig
 
-def log(message):
+def log(message) -> None:
+  """ Log the message to the log file
+  Args:
+    message (str): Message to be logged
+  """
   if not DEBUGConfig['debug']:
     return
 

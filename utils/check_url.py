@@ -1,7 +1,13 @@
 import utils.debug as debug
 from config.url import URLConfig
 
-def check_duplicate_urls(urls):
+def check_duplicate_urls(urls) -> list:
+  """ Check if the urls contain duplicate urls
+  Args:
+    urls (list): List of urls
+  Returns:
+    list: List of urls without duplicate urls
+  """
   new_urls = []
 
   if not urls or len(urls) == 0:
@@ -16,7 +22,14 @@ def check_duplicate_urls(urls):
   debug.log(f"Duplicate urls has been removed, total urls: {len(new_urls)}, from {len(urls)} urls")
   return new_urls
 
-def is_url_valid(domain, url):
+def is_url_valid(domain, url) -> bool:
+  """ Check if the url is valid based on the configuration
+  Args:
+    domain (str): Domain
+    url (str): URL
+  Returns:
+    bool: True if the url is valid, otherwise False
+  """
   if URLConfig['must_start_with']['enable']:
     if not url.startswith(URLConfig['must_start_with']['protocol']):
       debug.log(f"URL {url} is not valid, must start with {URLConfig['must_start_with']['protocol']}")
