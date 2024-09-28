@@ -3,14 +3,27 @@ import random
 import datetime
 from config.app import FILEPATHConfig
 
-def generate_file_name(number=None):
+def generate_file_name(number=None) -> str:
+  """ Generate file name with date and random number
+  Args:
+    number (int): Random number
+  Returns:
+    str: File name
+  """
   now = datetime.datetime.now()
   date = now.strftime("%Y%m%d")
   random_number = number or random.randint(1000, 9999)
 
   return f"urls-{date}-{str(random_number)}.txt"
 
-def write_to_file(file_name, urls, path=None, test=False):
+def write_to_file(file_name, urls, path=None, test=False) -> None:
+  """ Write urls to file
+  Args:
+    file_name (str): File name
+    urls (list): List of urls
+    path (str): Path to the file
+    test (bool): If true, the function will not write to file
+  """
   if not urls or len(urls) == 0:
     not test and print("Data urls is empty, nothing to write to file, skipping process")
     return

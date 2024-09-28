@@ -5,15 +5,27 @@ import utils.check_url as check
 from config.url import URLConfig
 from utils.generate_agent import generate_user_agent
 
-def generate_query(domain, keyword, search_engine="google"):
+def generate_query(domain, keyword, search_engine="google") -> str:
+  """ Generate query based on the search engine
+  Args:
+    domain (str): Domain
+    keyword (str): Keyword
+    search_engine (str): Search engine
+  Returns:
+    str: Query
+  """
   if search_engine == "bing":
     return f"sites:{domain} {keyword}"
 
   return f"site:{domain} {keyword}"
 
-def bypass_safe_search(url):
-  # This function is used to bypass the safe search
-  # If the search engine is google, we need to add &safe=off to the url
+def bypass_safe_search(url) -> str:
+  """ Bypass the safe search with adding parameter to the URL
+  Args:
+    url (str): URL
+  Returns:
+    str: URL with safe search bypassed
+  """
   if "google" in url:
     return f"{url}&safe=off"
   elif "bing" in url:
@@ -21,19 +33,26 @@ def bypass_safe_search(url):
 
   return url
 
-def get_data_from_search_engine(domain, keyword):
-  # First, we need to get the search engine url from the config
-  # If the search engine is not available, we will return empty list
-  # This is to prevent the program from crashing
-  # If search engine more than 1, we will loop through all of them
+def get_data_from_search_engine(domain, keyword) -> list:
+  """ Get data from the search engine
+  Args:
+    domain (str): Domain
+    keyword (str): Keyword
+  Returns:
+    list: List of urls
+  """
   urls = []
   blocked = False
 
-  if len(search_engine) == 0:
+  search_engines = URLConfig['search_engine_url']
+
+  if len(search_engines) == 0:
     debug.log("No search engine available")
     return urls
 
-  for search_engine in URLConfig['search_engine_url']:
+  blocked_text = URLConfig['blocked_text']
+
+  for search_engine in search_engines:
     blocked = False
 
     query = generate_query(domain, keyword).replace(" ", "+")
@@ -45,7 +64,7 @@ def get_data_from_search_engine(domain, keyword):
       debug.log(f"Failed to get data from search engine: {search_engine}")
       continue
 
-    for block in URLConfig['blocked_text']:
+    for block in blocked_text:
       if block in response.text:
         debug.log(f"Blocked by search engine: {search_engine}")
         blocked = True
